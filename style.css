@@ -192,6 +192,15 @@ main {
   display: block;
 }
 
+.termo-content iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Mantém a proporção widescreen */
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  display: block;
+}
+
 .termo-texto {
   font-size: 18px;
   text-align: center;
