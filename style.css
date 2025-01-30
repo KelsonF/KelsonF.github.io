@@ -1,4 +1,10 @@
 /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -8,6 +14,13 @@ body {
   align-items: center;
   background-color: #F8F7F3;
 }
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
 
 header {
   width: 100%;
@@ -68,6 +81,10 @@ main {
   border-radius: 10px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
+  padding: 1.5rem;
+  width: 90vw; /* Ocupa 90% da largura da tela */
+  max-width: 950px;/* Define uma largura máxima para manter centralizado */
+  margin: 2rem auto; /* Centraliza na tela */
 }
 
 .dicionario {
@@ -87,11 +104,20 @@ main {
 .dicionario-ref ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr; /* 2 colunas por padrão */
+  gap: 10px;
+  max-width: 90%;
+  justify-content: center; /* Centraliza as colunas no espaço disponível */
 }
 
 .dicionario-ref li {
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+  padding: 5px 10px;
+  width: 100%;
 }
 
 .dicionario-ref a {
@@ -101,6 +127,8 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
+  text-align: left;
+  width: 100%;
 }
 
 .dicionario-ref a:hover {
@@ -108,11 +136,22 @@ main {
   color: #0056b3;
 }
 
-.itens-dicionario{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: .5rem 2rem;
+@media (min-width: 460px) {
+  .dicionario-ref ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .dicionario-ref ul {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas a partir de 640px */
+  }
+}
+
+@media (min-width: 960px) {
+  .dicionario-ref ul {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas a partir de 960px */
+  }
 }
 
 /* Estilizando os termos */
@@ -127,6 +166,8 @@ main {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  overflow: hidden;
+  width: 90vw;
 }
 
 .termo h2 {
@@ -144,9 +185,10 @@ main {
 
 .termo-content video {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   border-radius: 10px;
   border: 2px solid #ddd;
+  display: block;
 }
 
 .termo-texto {
@@ -171,7 +213,6 @@ main {
   border-radius: 10px;
   border: 2px solid #ddd;
 }
-
 
 footer {
   margin-top: 2rem;
