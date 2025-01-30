@@ -52,12 +52,37 @@ h1 {
 }
 
 .main-content {
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column; /* Altera a direção para coluna em telas pequenas */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 2rem 1rem;
+  gap: 1rem; /* Adiciona espaçamento entre os elementos */
 }
 
 .main-title {
-  width: 50%;
+  width: 100%; /* Permite que o texto ocupe toda a largura */
+}
+
+.main-content img {
+  max-width: 80%; /* Evita que a imagem fique muito grande */
+  height: auto; /* Mantém a proporção */
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .main-title {
+    width: 50%;
+  }
+
+  .main-content img {
+    max-width: 300px;
+  }
 }
 
 .dicionario-ref {
