@@ -150,7 +150,8 @@ main {
 
 @media (min-width: 960px) {
   .dicionario-ref ul {
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas a partir de 960px */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, auto); 
   }
 }
 
